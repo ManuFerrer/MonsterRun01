@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
     public ElementoInteractivo BotonDerecha;
     public ElementoInteractivo BotonTop;
     public float direccion;
+
+    [SerializeField] protected AudioSource slap;
+    [SerializeField] protected AudioSource apple;
+
     // Use this for initialization
     void Start () {
         control = GetComponent<ControlMovimiento>();
@@ -65,7 +69,7 @@ public class PlayerController : MonoBehaviour {
         }
       
 	}
-
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -81,12 +85,14 @@ public class PlayerController : MonoBehaviour {
             control.contador -= 5;
             anim.SetBool("IsShock", true);
             shockPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z - explosion);
+            slap.Play();
             do
             {
                 control.movimiento = new Vector3(0, 0, 0);
                 transform.position = Vector3.Lerp(transform.position, shockPosition,0.01f);
             } while (Vector3.Distance(transform.position, shockPosition) >= 0.05f);
 
+            
             Destroy(other.gameObject);
             
         }
@@ -101,6 +107,7 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
             Invoke("restaurarvelocidad",3);
             control.contador -= 10;
+            slap.Play();
             if(control.salud <= 0)
             {
                 anim.SetBool("IsDie", true);
@@ -112,29 +119,31 @@ public class PlayerController : MonoBehaviour {
                 Invoke("Die", 5f);
                 
             }
-           
+            
         }
 
         if(other.tag == "Donut")
         {
-
+            apple.Play();
             control.Original_Speed = control.velocidad;
             control.velocidad -= freno;
             Invoke("restaurarvelocidad", 1f);
             control.contador += 10;
-
+            
             Destroy(other.gameObject);
-
+           
         }
 
        if(other.tag == "Lollipop")
         {
+            apple.Play();
             control.Original_Speed = control.velocidad;
             control.velocidad += aceleracion;
             Invoke("restaurarvelocidad", 1f);
             control.contador += 20;
-
+            
             Destroy(other.gameObject);
+          
         }
     }
 
