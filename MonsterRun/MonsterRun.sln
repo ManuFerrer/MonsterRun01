@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterRun", "MonsterRun.csproj", "{27DBD19E-E866-A3B1-77F4-003DE88C4012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterRun.Editor", "MonsterRun.Editor.csproj", "{EA93738A-1FE2-94C3-F1C6-2858C54DC22B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27DBD19E-E866-A3B1-77F4-003DE88C4012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DBD19E-E866-A3B1-77F4-003DE88C4012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DBD19E-E866-A3B1-77F4-003DE88C4012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DBD19E-E866-A3B1-77F4-003DE88C4012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA93738A-1FE2-94C3-F1C6-2858C54DC22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA93738A-1FE2-94C3-F1C6-2858C54DC22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA93738A-1FE2-94C3-F1C6-2858C54DC22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA93738A-1FE2-94C3-F1C6-2858C54DC22B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
